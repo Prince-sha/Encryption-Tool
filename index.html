@@ -54,7 +54,7 @@
         const errorLabel = document.getElementById('error');
         const keyLabelText = document.getElementById('keyLabelText');
 
-        let originalText = '';  // Variable to store the plaintext before encryption
+        let originalText = '';  
 
         function showError(message) {
             errorLabel.textContent = message;
@@ -63,7 +63,7 @@
 
         function hideError() {
             errorLabel.style.display = 'none';
-            errorLabel.textContent = ''; // Clear message
+            errorLabel.textContent = ''; 
         }
 
         function caesarCipher(text, key, type) {
@@ -140,7 +140,7 @@
             const key = keyInput.value;
             let result = '';
 
-            // Save original text for later decryption
+          
             originalText = text;
 
             if (cipherType === 'caesar') {
@@ -154,12 +154,11 @@
         decryptButton.addEventListener('click', function() {
             hideError();
             const cipherType = cipherTypeSelect.value;
-            const text = textInput.value; // The user will input the *ciphertext* here for decryption
+            const text = textInput.value; 
             const key = keyInput.value;
             let result = '';
 
-            // Always show the original text when decrypting
-            resultTextarea.value = originalText; // Display the original plaintext
+            resultTextarea.value = originalText; 
 
             if (cipherType === 'caesar') {
                 result = caesarCipher(text, key, 'decrypt');
@@ -167,12 +166,11 @@
                 result = vigenereCipher(text, key, 'decrypt');
             }
             
-            // Optionally, you can add logic to display the actual decrypted result
-            // resultTextarea.value = result; // Uncomment this line if you want to display the decrypted result
         });
     });
 </script>
 
 
 </body>
+
 </html>
